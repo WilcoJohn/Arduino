@@ -17,20 +17,20 @@ public:
     m_delay{ delay }
   {}
 
-
+ ~HTSensor() = default;
 
 
 
 
   
-  // make read and write easiers
-  void print() const
+  // make read and write simpler/ neater for interface
+  void serialPrint() const
 	{
-		Serial.print("T = "); Serial.print((int)m_temperature); Serial.println(" °C");
-		Serial.print("H = "); Serial.print((int)m_humidity); Serial.println(" %");
+		Serial.print("T = "); Serial.print(this->getT()); Serial.println(" °C");
+		Serial.print("H = "); Serial.print(this->getH()); Serial.println(" %");
 	}
 
-	void read()
+	void readSensor()
 	{
 		if (m_sensor.read(m_pinSensor, &m_temperature, &m_humidity, m_data))
 		{
@@ -42,17 +42,17 @@ public:
 
 
   // Getters and setters
-  byte getH_byte() const{ return m_humidity;};
-  byte getT_byte() const{ return m_temperature;}
-  byte getData_byte() const{ return m_data;};
+  inline byte getH_byte() const{ return m_humidity;};
+  inline byte getT_byte() const{ return m_temperature;}
+  inline byte getData_byte() const{ return m_data;};
 
-  int getH() const{ return (int)m_humidity;}
-  int getT() const{ return (int)m_temperature;}
+  inline int getH() const{ return (int)m_humidity;}
+  inline int getT() const{ return (int)m_temperature;}
 
-  int getDelay() const { return m_delay;}
+  inline int getDelay() const { return m_delay;}
   void setDelay(int delay) { m_delay = delay;}
 
-  int getPin() const { return m_pinSensor;}
+  inline int getPin() const { return m_pinSensor;}
   void setPin(int pin) { m_pinSensor = pin;}
 };
 
