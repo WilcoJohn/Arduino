@@ -8,7 +8,6 @@ lcdDisplay screen{};          // create LCD screen object
 
 void setup() 
 {
-  
   Serial.begin(9600);         // serial setup
   screen.init();              // LCD screen display set up
 }
