@@ -18,6 +18,12 @@ public:
   {}
 
 
+
+
+
+
+  
+  // make read and write easiers
   void print() const
 	{
 		Serial.print("T = "); Serial.print((int)m_temperature); Serial.println(" °C");
@@ -33,6 +39,9 @@ public:
 		}
 	}
 
+
+
+  // Getters and setters
   byte getH_byte() const{ return m_humidity;};
   byte getT_byte() const{ return m_temperature;}
   byte getData_byte() const{ return m_data;};
