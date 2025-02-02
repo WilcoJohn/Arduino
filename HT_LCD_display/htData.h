@@ -12,7 +12,7 @@ private:
 
 
 public:
-  HTSensor(int sensorPin, int delay = 10000)
+  HTSensor(int sensorPin, int delay = 1000)
   : m_pinSensor{ sensorPin },
     m_delay{ delay }
   {}
