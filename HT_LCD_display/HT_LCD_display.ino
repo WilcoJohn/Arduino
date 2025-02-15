@@ -14,7 +14,7 @@ void setup()
 
 void loop() 
 {
-  htData.readSensor();        // update data
+  htData.readSensor();        // update/read sensor data
   htData.serialPrint();       // print data to serial
   
   

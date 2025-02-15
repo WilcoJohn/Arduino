@@ -5,8 +5,8 @@
 class lcdDisplay
 {
   private:
-  LiquidCrystal_I2C m_lcd{ 0x27, 16, 2 }; //  Make sure sda and scl pins are correcty connected for LCD displau to use. 
-                                          //  Currently set up for arduino-UNO 
+  LiquidCrystal_I2C m_lcd{ 0x27, 16, 2 }; //  Make sure sda and scl pins are correcty connected for LCD display to use. 
+                                          //  Currently the "0x27" is set up for arduino-UNO 
   
   public:
   lcdDisplay() = default;

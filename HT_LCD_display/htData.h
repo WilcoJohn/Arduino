@@ -12,7 +12,7 @@ class HTSensor
 
 
   public:
-    HTSensor(int sensorPin, int delay = 1000)
+    HTSensor(int sensorPin = A0, int delay = 1000)
     : m_pinSensor{ sensorPin },
       m_delay{ delay }
     {}
@@ -50,7 +50,15 @@ class HTSensor
     inline int getT() const{ return (int)m_temperature;}
 
     inline int getDelay() const { return m_delay;}
-    void setDelay(int delay) { m_delay = delay;}
+    void setDelay(int delay) 
+    { 
+      if (delay < 1000)
+      {
+        Serial.println("Delay needs to be >=1000");
+        return;
+      }
+      m_delay = delay;
+    }
 
     inline int getPin() const { return m_pinSensor;}
     void setPin(int pin) { m_pinSensor = pin;}
